@@ -1,6 +1,4 @@
-   <?php
-    echo 'Copyright ' . date('y'); 
-   ?>
+
    
    
    <!-- Optional JavaScript -->
