@@ -1,30 +1,29 @@
-<div class="navigation">
-<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-  <a class="navbar-brand" href="#">WebSiteName</a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div id="navb" class="navbar-collapse collapse hide">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Page 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Page 2</a>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/event-manager/website/views/signup.php"><span class="fas fa-user"></span> Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/event-manager/website/views/login.php"><span class="fas fa-sign-in-alt"></span> Login</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-</div>
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Log in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
