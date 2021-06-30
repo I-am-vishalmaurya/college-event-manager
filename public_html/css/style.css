@@ -2,20 +2,20 @@
     box-sizing: border-box;
 }
 
-/* Navbar CSS */
-.nav-link{
+  /* Navbar CSS */
+  .nav-link{
     font-size: 18px;
 }
 /* ---------x------------Navbar CSS---------x-------- */
-.container-fluid{
+.main-site-image{
     height: 600px;
-    background: url("../assets/images/concert-phone.jpg");
+    background: url("assets/images/concert-phone.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.center{
+.center-1{
     position: relative;
     font-size: 40px;
     font-weight: 700;
@@ -23,4 +23,3 @@
     padding-top: 80px;
     color: white;
 }
-
