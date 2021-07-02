@@ -130,11 +130,12 @@ include 'topnavbar.php';
             <button class="btn p-3 border-primary font-weight-bold h-100"><i class="fa fa-search" aria-hidden="true"> Search event</i></button>
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
-            <button class="btn p-3 border-primary font-weight-bold h-100"><i class="fa fa-plus" aria-hidden="true"> Add event</i></button>
+            <a href="showevent.php"><button class="btn p-3 border-primary font-weight-bold h-100"><i class="fa fa-plus" aria-hidden="true"> Show event</i></button></a>
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
-            <button class="btn p-3 border-primary font-weight-bold h-100"><i class="fa fa-plus" aria-hidden="true"> Add event</i></button>
+            <button class="btn p-3 border-primary font-weight-bold h-100"><i class="fa fa-plus" aria-hidden="true"> Show event</i></button>
         </div>
+        
     </div>
 </div>
 
