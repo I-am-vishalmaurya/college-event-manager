@@ -56,7 +56,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Host a new event:</h6>
-                        <a class="collapse-item" href="utilities-color.html">College event</a>
+                        <a class="collapse-item" href="eventadd.php">College event</a>
                         <a class="collapse-item" href="utilities-border.html">Open event</a>
                         <a class="collapse-item" href="utilities-animation.html">All events</a>
                         <a class="collapse-item" href="utilities-other.html">Other</a>

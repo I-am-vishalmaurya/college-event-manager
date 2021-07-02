@@ -60,7 +60,7 @@ include 'topnavbar.php';
                                 <input type="file" name="thumbnail" class="form-control form-control-user" placeholder="Upload an photo">
                             </div>
                             <script>
-                                // Add the following code if you want the name of the file appear on select
+                                // code to add the name of the file when selected
                                 $(".custom-file-input").on("change", function() {
                                 var fileName = $(this).val().split("\\").pop();
                                 $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
