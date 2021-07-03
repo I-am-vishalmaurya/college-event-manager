@@ -9,6 +9,7 @@ include 'topnavbar.php';
     
     <div class="row">
         <?php
+ 
         require 'db/dbconfig.php';
         if ($email = $_SESSION['email']) {
             $sql = "SELECT * FROM `event_details` WHERE unique_email = '$email' ORDER BY ID DESC";
@@ -32,7 +33,7 @@ include 'topnavbar.php';
                             <div class="card-footer">
 
 
-                                <input type="hidden" name="event_id" value=<?php $id = $row_data['ID']; ?>>
+                                <input type="hidden" name="event_id" value=<?php $_SESSION['EVENT_ID'] =  $id = $row_data['ID']; ?>>
                                 <button type="submit" name="edit_button" class="btn btn-block btn-secondary mb-1" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
 
                                 <a href="#" class="" style="text-decoration: none;">
@@ -74,7 +75,7 @@ include 'topnavbar.php';
                     $query_run = mysqli_query($link, $sql);
                     foreach ($query_run as $row) {
                     ?>
-                        <form action="source/update-event-code.php" method="post">
+                        <form action="source/event-update-code.php" method="post">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label>Event Name</label>

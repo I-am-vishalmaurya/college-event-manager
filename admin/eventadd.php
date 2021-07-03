@@ -6,7 +6,7 @@ include 'topnavbar.php';
 ?>
 
 <div class="container-fluid">
-    <?php echo $_SESSION['status']; ?>
+
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -67,7 +67,7 @@ include 'topnavbar.php';
                                 });
                             </script>
                         </div>
-                        <button type="submit" name="registerbutton" class="btn btn-primary btn-user btn-block">
+                        <button type="submit" id="post_event_btn" name="post-event-button" class="btn btn-primary btn-user btn-block">
                             Post Event
                         </button>
                        
