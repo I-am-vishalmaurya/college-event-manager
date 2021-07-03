@@ -1,26 +1,26 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
 }
 
 /* Navbar CSS */
-.nav-link{
-    font-size: 18px;
+.nav-link {
+  font-size: 16px;
 }
+.navbar-nav.mr-auto ul li a.nav-link {
+  justify-content: right;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-link:hover{
+    color: orange !important;
+}
+.dropdown-item-or:hover{
+    color: orange !important;
+}
+
 /* ---------x------------Navbar CSS---------x-------- */
-.main-site-image{
-    height: 600px;
-    background: url("../assets/images/concert-phone.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.center{
-    position: relative;
-    font-size: 40px;
-    font-weight: 700;
-    padding: 10px;
-    padding-top: 80px;
-    color: white;
-}
-

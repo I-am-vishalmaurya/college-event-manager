@@ -1,25 +1,16 @@
 <?php
-require_once 'includes/header.php';
-require_once 'includes/navbar.php';
-
+include 'includes/ph_header.php';
+include 'includes/ph_navbar.php';
 ?>
-<!-- -----------site-body-main---------- -->
-<div class="container-fluid main-site-image">
-    <div>
-        <div class="col-lg-12">
-        <div class="row text center-1">
-            Sign Up today for a wonderful experience.
-        </div>
-        <div type="button" class="btn btn-info">
-            Sign Up
-        </div>
-        </div>
-    </div>
-
+<!-- body for the illustration -->
+<div class="container-fluid">
+<div class="row sm-h-200">
+    <img src="assets/fresh.png" alt="main body image with text">
 </div>
-<!-- -----x------site-body-main------x---- -->
+</div>
 
 
 <?php
-require_once 'includes/footer.php';
+
+include 'includes/ph_footer.php';
 ?>
