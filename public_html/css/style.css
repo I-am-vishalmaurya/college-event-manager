@@ -1,10 +1,13 @@
 * {
   box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
 }
 
 html,body{
     height: 100%;
 }
+
+
 
 /* Navbar CSS */
 .nav-link {
@@ -23,4 +26,20 @@ html,body{
     color: orange !important;
 }
 
-/* ---------x------------Navbar CSS---------x-------- */
+/* ---------x------------Navbar CSS---------x--------*/
+/*   Featured events   */
+
+h5.card-title{
+  text-align: center;
+  color: #ff2400;
+}
+
+.featured-event-text{
+  word-spacing: 0.3rem;
+  text-decoration: underline;
+  
+}
+
+.card{
+  border-color: #f94d00;
+}
