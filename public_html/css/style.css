@@ -26,8 +26,22 @@ html,body{
     color: orange !important;
 }
 
+.dropdown-menu-left{
+  left: 0;
+}
+
 /* ---------x------------Navbar CSS---------x--------*/
 /*   Featured events   */
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
 
 h5.card-title{
   text-align: center;

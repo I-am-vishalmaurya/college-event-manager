@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow mb-4 p-2 static-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
         <lottie-player src="https://assets7.lottiefiles.com/temporary_files/PH5YkW.json"  background="transparent"  speed="1"  style="width: 70px; height: 35px;"  class="d-inline-block align-text-top mt-0" loop  autoplay></lottie-player>
         <strong>Eventers</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
@@ -22,26 +22,27 @@
                     </form>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="fas fa-home"></i> Home
+                    <a class="nav-link active" href="../public_html/index.php"><i class="fas fa-home"></i> Home
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-calendar-alt"></i> Events</a>
+                    <a class="nav-link" href="../public_html/pages/events.php"><i class="fas fa-calendar-alt"></i> Events</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-info"></i> About</a>
+                    <a class="nav-link" href="../public_html/pages/about-us.php"><i class="fas fa-info"></i> About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-id-card"></i> Contact us</a>
+                    <a class="nav-link" href="../public_html/pages/contact-us.php"><i class="fas fa-id-card"></i> Contact us</a>
                 </li>
-                <li class="nav-item dropdown ">
+                <li class="nav-item dropdown">
+                
                     <a class="nav-link dropdown-toggle user-account-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i> Account</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item dropdown-item-or" href="#">Log in</a>
-                        <a class="dropdown-item dropdown-item-or" href="#">Sign up</a>
-                        <a class="dropdown-item dropdown-item-or" href="#">Something else here</a>
+                    <div class="dropdown-menu dropdown-menu-left">
+                        <a class="dropdown-item dropdown-item-or" href="../admin/login.php">Log in</a>
+                        <a class="dropdown-item dropdown-item-or" href="../admin/register.php">Sign up</a>
+                        <a class="dropdown-item dropdown-item-or" href="#">Something</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item dropdown-item-or" href="#">Separated link</a>
                     </div>
@@ -50,6 +51,7 @@
                             content: none;
                         }
                     </style>
+                
                 </li>
             </ul>
       
