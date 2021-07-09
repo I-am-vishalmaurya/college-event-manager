@@ -23,4 +23,3 @@ function colorLinks(){
 }
 
 linkColors.forEach(l => l.addEventListener('click', colorLinks))
-

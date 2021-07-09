@@ -45,11 +45,11 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password">
+                                        <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
                                         
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" name="confirm_password" placeholder="Repeat Password">
+                                        <input type="password" class="form-control form-control-user" name="confirm_password" placeholder="Repeat Password">
                                        
                                     </div>
                                 </div>

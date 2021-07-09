@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Boxicons CSS -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&display=swap" rel="stylesheet">
-
-    <!-- Style sheet  -->
-    <link rel="stylesheet" href="styles/style.css">
-
-    <title>Joiner Dashboard</title>
-</head>
-<body>
-    <!-- header -->
-    <header class="header">
-        <div class="header__container">
-            <img src="profile_placeholder.png" alt="" class="header__img">
+<!-- header -->
+<header class="header">
+<div class="header__container">
+            
             <a href="#" class="header__logo">Eventers</a>
             <div class="header__search">
                 <input type="search" placeholder="Search event..." class="header__input">
@@ -28,6 +10,7 @@
             <div class="header__toggle">
                 <i class='bx bx-menu' id='header_toggle'></i>
             </div>
+            <p class="text-center gray-400"><?php echo 'Hello ' . $_SESSION['first_name']; ?></p>
         </div>
     </header>
 
@@ -58,7 +41,7 @@
                     </a>
                     <div class="nav__dropdown__collapse">
                         <div class="nav__dropdown__content">
-                            <a href="#" class="nav__dropdown__item">Account</a>
+                            <a href="pages/view-profile.php" class="nav__dropdown__item">Account</a>
                             <a href="#" class="nav__dropdown__item">Password</a>
                            
                         </div>
@@ -102,16 +85,3 @@
         </div>
        
     </nav>
-
-    <!-- content -->
-    <main>
-        <div class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sed corporis veniam a quasi debitis quam harum quae non dolorum blanditiis, ducimus officiis deserunt consequatur reprehenderit similique iure sunt officia.
-            Iste molestias eligendi exercitationem nostrum architecto eveniet voluptate alias, aliquid, unde illum beatae reiciendis animi. Provident quidem natus illo quia beatae hic, quis, sit iste, accusamus error dolor ut ipsam.
-        </div>
-    </main>
-
-    <!-- Main JS -->
-    <script src="js/main.js"></script>
-</body>
-</html>
