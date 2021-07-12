@@ -2,7 +2,7 @@
 <header class="header">
 <div class="header__container">
             
-            <a href="#" class="header__logo">Eventers</a>
+            <a href="../../public_html/index.php" class="header__logo">Eventers</a>
             <div class="header__search">
                 <input type="search" placeholder="Search event..." class="header__input">
                 <i class='bx bx-search search__icon'></i>
@@ -17,7 +17,7 @@
     <!-- Navbar -->
     <nav id="navbar" class="nav">
         <div class="nav__container">
-            <a href="#" class="nav__links nav__logo">
+            <a href="../../public_html/index.php" class="nav__links nav__logo">
                 <i class='bx bx-disc nav__box_icons' ></i>
                 <span class="nav__logo__name">Eventers</span>
             </a>
