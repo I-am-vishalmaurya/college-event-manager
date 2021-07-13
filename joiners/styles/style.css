@@ -328,6 +328,12 @@ img {
   }
 }
 
+@media screen and (max-width: 992px){
+  .nav{
+    left: 0 !important;
+  }
+}
+
 /* Joiners Login and signup */
 .signup-joiners-background {
   background-color: white;
@@ -341,13 +347,12 @@ img {
 
 .update__profile__pic{
     position: relative;
+    
 }
 .account__image {
-  width: 200px;
+  width: 150px;
   height: auto;
   border-radius: 50%;
-  
-  
 }
 
 .account__image {
@@ -356,6 +361,7 @@ img {
   height: auto;
   transition: 0.5s ease;
   backface-visibility: hidden;
+  
 }
 
 .image__placeholder{
@@ -367,12 +373,18 @@ img {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+  
 }
 
 .update__profile__pic:hover .account__image{
     opacity: 0.3;
+  
 }
 
 .update__profile__pic:hover .image__placeholder{
     opacity: 1;
+}
+
+.input.form-control.bg-light.border-0.small {
+  border-radius: 0 !important;
 }

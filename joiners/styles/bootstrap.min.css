@@ -10073,3 +10073,16 @@ form.user .form-control-user {
 .border-left-warning{
   border-left: 0.25rem solid #efb73e !important;
 }
+
+/* View Profile css */
+.static__input{
+  border: none !important;
+}
+
+.img-profile{
+  height: 2rem;
+  width: 2rem;
+}
+.dropdown.no-arrow .dropdown-toggle::after {
+  display: none;
+}

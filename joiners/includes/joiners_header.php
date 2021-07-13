@@ -19,5 +19,5 @@
     <link rel="stylesheet" href="../styles/style.css">
     <title>Joiner Dashboard</title>
 </head>
-<body>
+<body class="bg-white">
     

@@ -41,23 +41,11 @@
 
                     <a class="nav-link dropdown-toggle user-account-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i> Account</a>
                     <div class="dropdown-menu dropdown-menu-left">
-                        <?php if ($_SESSION["loggedin"]) {
-                            ?>
-                            <a class="dropdown-item dropdown-item-or" href="../admin/login.php"><?php echo $_SESSION['first_name']; ?></a>
-                            <a class="dropdown-item dropdown-item-or" href="../admin/register.php">Profile</a>
-                            <a class="dropdown-item dropdown-item-or" href="#">Something</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item dropdown-item-or" href="../pages/logout.php">Log out</a>
-                            <?php
-                        } else {
-                            ?>
-                            <a class="dropdown-item dropdown-item-or" href="../../joiners/pages/joiners_login.php">Log in</a>
-                            <a class="dropdown-item dropdown-item-or" href="../../admin/register.php">For Event Heads</a>
-                            <a class="dropdown-item dropdown-item-or" href="#">Something</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item dropdown-item-or" href="#"></a>
-                            <?php
-                        } ?>
+                        <a class="dropdown-item dropdown-item-or" href="../joiners/pages/joiners_login.php">Join the event</a>
+                        <a class="dropdown-item dropdown-item-or" href="../admin/login.php">Host the event</a>
+                        <!-- <a class="dropdown-item dropdown-item-or" href="#">Something</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item dropdown-item-or" href="../../event-manager/admin/logout.php">Log out</a> -->
 
                     </div>
                     <style>
