@@ -50,9 +50,9 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="report.php">
                 <i class='bx bx-message nav__box_icons' ></i>
-                <span>Messages</span></a>
+                <span>Report</span></a>
             </li>
 
             
