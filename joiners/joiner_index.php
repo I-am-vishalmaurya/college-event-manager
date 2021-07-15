@@ -12,6 +12,9 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
     
 </head>
 
@@ -46,7 +49,7 @@ session_start();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../public_html/pages/events.php"><i class="fas fa-calendar-alt"></i> Events</a>
+                        <a class="nav-link" href="../joiners/pages/all_events.php"><i class="fas fa-calendar-alt"></i> Events</a>
                     </li>
 
                     <li class="nav-item">
@@ -260,16 +263,16 @@ session_start();
     <!-- Recent Activity -->
     <!-- Similar to joined evenet -->
 
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2021</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+ <!-- Footer -->
+ <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
 
+                        <span>Made with ❤️ by Vishal Maurya</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

@@ -63,7 +63,7 @@
 
             </div>
 
-            <a href="../index.php" class="nav__links">
+            <a href="../pages/dashboard.php" class="nav__links">
                 <i class='bx bx-home-alt nav__box_icons'></i>
                 <span class="nav__name">Home</span>
             </a>
@@ -99,15 +99,15 @@
                 <i class='bx bx-compass nav__box_icons'></i>
                 <span class="nav__name">Explore</span>
             </a>
-            <a href="#" class="nav__links">
+            <a href="../pages/all_events.php" class="nav__links">
                 <i class='bx bx-calendar-event nav__box_icons'></i>
                 <span class="nav__name">All events</span>
             </a>
-            <a href="#" class="nav__links">
+            <a href="../pages/saved.php" class="nav__links">
                 <i class='bx bx-bookmark-alt nav__box_icons'></i>
                 <span class="nav__name">Saved</span>
             </a>
-            <a href="#" class="nav__links">
+            <a href="../pages/joined_events.php" class="nav__links">
                 <i class='bx bx-time nav__box_icons'></i>
                 <span class="nav__name">Your event schedule</span>
             </a>

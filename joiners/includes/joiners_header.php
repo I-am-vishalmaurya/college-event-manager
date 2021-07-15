@@ -17,7 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Joiner Dashboard</title>
+    <title><?php echo $title; ?></title>
 </head>
 <body class="bg-white">
     

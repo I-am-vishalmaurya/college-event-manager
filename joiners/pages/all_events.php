@@ -1,8 +1,7 @@
 <?php
-session_start();
 $title = 'Latest events - Eventers';
-include '../includes/ph_header.php';
-include '../includes/ph_navbar.php';
+include '../includes/joiners_header.php';
+include '../includes/joiners_navbar.php';
 include '../../global/functions/functions.php';
 ?>
 
@@ -72,5 +71,5 @@ include '../../global/functions/functions.php';
 </div>
 
 <?php
-include '../includes/ph_footer.php';
+include '../includes/joiners_footer.php';
 ?>

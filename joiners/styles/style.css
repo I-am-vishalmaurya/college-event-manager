@@ -388,3 +388,7 @@ img {
 .input.form-control.bg-light.border-0.small {
   border-radius: 0 !important;
 }
+
+.bxs-red-heart{
+  background-color: red !important;
+}

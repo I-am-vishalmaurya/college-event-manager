@@ -1,4 +1,5 @@
 <?php
+$title = 'Dashboard - Eventers';
     include '../includes/joiners_header.php';
     include '../includes/joiners_navbar.php';
 ?>

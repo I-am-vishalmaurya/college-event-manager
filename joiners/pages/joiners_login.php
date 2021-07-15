@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../styles/style.css">
     <title>Student - Log in</title>
 </head>
+<body>
 <div class="container">
 
 <!-- Outer Row -->
@@ -65,6 +66,10 @@
                             <div class="text-center">
                                 <a class="small" href="joiners_signup.php">Create an Account!</a>
                             </div>
+                            <div class="text-center">
+                                <a class="small" href="../../admin/login.php">Login as event head</a>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

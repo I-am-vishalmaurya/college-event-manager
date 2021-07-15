@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["email"] = $email;
                             
                             // Redirect user to welcome page
-                            header("location: ../pages/index.php");
+                            header("location: ../pages/dashboard.php");
                         } else {
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password."
