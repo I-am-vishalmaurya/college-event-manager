@@ -49,7 +49,7 @@ session_start();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../joiners/pages/all_events.php"><i class="fas fa-calendar-alt"></i> Events</a>
+                        <a class="nav-link" href="../joiners/pages/joiner_dashboard_allEvents.php"><i class="fas fa-calendar-alt"></i> Events</a>
                     </li>
 
                     <li class="nav-item">
