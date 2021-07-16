@@ -31,7 +31,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="index.php">
                 <i class='bx bx-home-alt nav__box_icons' ></i>
                     <span>Home</span></a>
             </li>
@@ -65,9 +65,14 @@
                 Events
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="host-event.php">
                 <i class='bx bx-compass nav__box_icons' ></i>
-                <span>Explore</span></a>
+                <span>Host an event</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="host-event.php">
+                <i class='bx bxs-tachometer' ></i>
+                <span>Manage</span></a>
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
