@@ -107,7 +107,7 @@
                 <i class='bx bx-bookmark-alt nav__box_icons'></i>
                 <span class="nav__name">Saved</span>
             </a>
-            <a href="../pages/joined_events.php" class="nav__links">
+            <a href="../pages/event-joiner.php" class="nav__links">
                 <i class='bx bx-time nav__box_icons'></i>
                 <span class="nav__name">Your event schedule</span>
             </a>

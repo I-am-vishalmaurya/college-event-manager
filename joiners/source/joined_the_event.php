@@ -1,9 +1,7 @@
 <?php
-session_start();
-
+$title = "Join an event - Eventers";
+include '../includes/joiners_header.php';
 include '../db/dbconfig.php';
-include '../includes/ph_header.php';
-
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -41,5 +39,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 ?>
 
 <?php
-include '../includes/ph_footer.php';
+include '../includes/joiners_footer.php';
 ?>
