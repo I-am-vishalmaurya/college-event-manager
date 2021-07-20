@@ -1,7 +1,6 @@
 <?php
 include 'includes/header.php';
 include 'includes/navbar.php';
-include 'topnavbar.php';
 ?>
 <div class="row ml-4">
     <div class="text-start">
@@ -37,6 +36,5 @@ include 'topnavbar.php';
 
 
 <?php
-include 'includes/script.php';
 include 'includes/footer.php';
 ?>
