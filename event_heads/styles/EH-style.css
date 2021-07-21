@@ -346,7 +346,7 @@ img {
     
 }
 .account__image {
-  width: 150px;
+  width: 100px;
   height: auto;
   border-radius: 50%;
 }
@@ -381,9 +381,7 @@ img {
     opacity: 1;
 }
 
-.input.form-control.bg-light.border-0.small {
-  border-radius: 0 !important;
-}
+
 
 .bxs-red-heart{
   background-color: red !important;

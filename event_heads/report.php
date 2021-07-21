@@ -1,10 +1,12 @@
 <?php
+$title = "Report - Eventers";
+$bodyColor = 'bg-white';
 include 'includes/header.php';
 include 'includes/navbar.php';
 include '../global/functions/functions.php';
 ?>
 
-<div class="container-fluid shadow bg-white">
+<div class="container-fluid">
     <div class="row">
         <h3 class="my-4 text-center fs-3 fw-bold h3 text-primary 600">Event Report</h3>
     </div>

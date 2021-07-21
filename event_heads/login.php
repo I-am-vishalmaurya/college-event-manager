@@ -1,4 +1,6 @@
 <?php
+$title = "Login as Event Head - Eventers";
+$bodyColor = "bg-light";
 include 'includes/header.php';
 ?>
 <div class="container">

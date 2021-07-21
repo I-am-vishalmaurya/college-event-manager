@@ -1,4 +1,6 @@
 <?php
+$itile = "Manage events - Eventers";
+$bodyColor = "bg-light";
 include 'includes/header.php';
 include 'includes/navbar.php';
 ?>

@@ -1,7 +1,7 @@
 <!-- header -->
 <header class="header shadow bg-white mb-4 shadow">
     <div class="header__container ">
-        <a href="../joiner_index.php" class="header__logo">Eventers - Event Heads</a>
+        <a href="EH_index.php" class="header__logo">Eventers - Event Heads</a>
         <div class="header_search">
             <!-- <input type="search" placeholder="Search event..." class="header__input">
                 <i class='bx bx-search search__icon'></i> -->
@@ -22,12 +22,12 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow" style="list-style-type: none;">
             <a class="nav-link dropdown-toggle" id="userDetailDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "Hello" //$_SESSION['first_name'];echo str_repeat('&nbsp;', 2);  echo $_SESSION['last_name'];?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "Hello&nbsp;" . $_SESSION['first_name'];//echo str_repeat('&nbsp;', 2);  echo $_SESSION['last_name'];?></span>
                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDetailDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="view-profile.php">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
@@ -40,7 +40,7 @@
                     Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                 </a>
@@ -52,7 +52,7 @@
 <!-- Navbar -->
 <nav id="navbar" class="nav">
     <div class="nav__container">
-        <a href="../joiner_index.php" class="nav__links nav__logo">
+        <a href="EH_index.php" class="nav__links nav__logo">
             <i class='bx bx-disc nav__box_icons'></i>
             <span class="nav__logo__name">Eventers</span>
         </a>
@@ -63,20 +63,20 @@
 
             </div>
 
-            <a href="../pages/dashboard.php" class="nav__links">
+            <a href="dashboard.php" class="nav__links">
                 <i class='bx bx-home-alt nav__box_icons'></i>
                 <span class="nav__name">Home</span>
             </a>
 
             <div class="nav__dropdown active">
-                <a href="#" class="nav__links">
+                <a href="view-profile.php" class="nav__links">
                     <i class='bx bx-user nav__box_icons'></i>
                     <span class="nav__name">Profile</span>
                     <i class='bx bx-chevron-down nav__icon nav__dropdown_icon'></i>
                 </a>
                 <div class="nav__dropdown__collapse bg-white">
                     <div class="nav__dropdown__content">
-                        <a href="../pages/view-profile.php" class="nav__dropdown__item">Account</a>
+                        <a href="view-profile.php" class="nav__dropdown__item">Account</a>
                         <a href="#" class="nav__dropdown__item">Password</a>
 
                     </div>
@@ -95,11 +95,11 @@
                 <h3 class="nav__subtitle">Events</h3>
 
             </div>
-            <a href="../joiner_index.php" class="nav__links">
+            <a href="EH_index.php" class="nav__links">
                 <i class='bx bx-compass nav__box_icons'></i>
                 <span class="nav__name">Explore</span>
             </a>
-            <a href="../pages/saved.php" class="nav__links">
+            <a href="host-event.php" class="nav__links">
                 <i class='bx bx-bookmark-alt nav__box_icons'></i>
                 <span class="nav__name">Host an event</span>
             </a>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="nav__links nav__logout">
+            <a href="logout.php" class="nav__links nav__logout">
                 <i class='bx bx-log-out nav__box_icons'></i>
                 <span class="nav__name">Log out</span>
             </a>

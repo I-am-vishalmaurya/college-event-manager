@@ -12,10 +12,9 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo "Dashboard - Eventers" ?></title>
+    <title><?php echo $title; ?></title>
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;400;800&display=swap" rel="stylesheet">
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -25,4 +24,4 @@ session_start();
 
 </head>
 
-<body class ="bg-light">
+<body class =<?php echo $bodyColor; ?>>
