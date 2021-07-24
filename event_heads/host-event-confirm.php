@@ -5,7 +5,7 @@ $bodyColor = "bg-light";
     include 'includes/navbar.php';
 ?>
 <div class="ml-4">
-<form>
+
   <fieldset>
     <legend>Hosted by</legend>
     <div class="form-group row">
@@ -22,18 +22,19 @@ $bodyColor = "bg-light";
         <input type="text" readonly="" class="form-control-plaintext" id="staticPhone" value=<?php echo "9076260427" ?>>
       </div>
     </div>
+    <form action ="source/addMainEventCode.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="event_name" class="form-label mt-4">Event Name</label>
-      <input type="eventName" class="form-control" id="event_name" aria-describedby="eventnameHelp" placeholder="Enter event name...">
+      <input type="eventName" name= "newEventName" class="form-control" id="event_name" aria-describedby="eventnameHelp" placeholder="Enter event name...">
       <small id="eventnameHelp" class="form-text text-muted">Event name should be unique.</small>
     </div>
     <div class="form-group">
       <label for="inputLocation" class="form-label mt-4">Event location</label>
-      <input type="text" class="form-control" id="inputLocation" placeholder="Event Location">
+      <input type="text" name= "newEventLocation" class="form-control" id="inputLocation" placeholder="Event Location">
     </div>
     <div class="form-group">
       <label for="exampleSelect1" class="form-label mt-4">Number of days for event</label>
-      <select class="form-select" id="exampleSelect1">
+      <select class="form-select" id="exampleSelect1" name= "newEventdays">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -46,19 +47,19 @@ $bodyColor = "bg-light";
     </div>
     <div class="form-group">
       <label for="exampleTextarea" class="form-label mt-4">Little description about event</label>
-      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+      <textarea name="newEventDescription" class="form-control" id="exampleTextarea" rows="3"></textarea>
     </div>
     <div class="form-group">
       <label for="formFile" class="form-label mt-4">Thumbnail for event</label>
-      <input class="form-control" type="file" id="formFile">
+      <input class="form-control" name="newEventThumbnail" type="file" id="formFile">
     </div>
     <fieldset class="form-group">
       <legend class="mt-4">Number of visitor you expect</legend>
         <label for="customRange3" class="form-label">Example range</label>
-        <input type="range" class="form-range slider_no_of_visitor" value = "100" min="0" max="10000" step="100" id="range">
+        <input type="range" name="newEventVisitorRange" class="form-range slider_no_of_visitor" value = "100" min="0" max="10000" step="100" id="range">
         <div class="range-value" id="rangeV"></div>
     </fieldset>
-    <button type="submit" class="btn btn-primary">Host</button>
+    <button type="submit" name="addEvent" class="btn btn-primary">Host</button>
 </form>
 </div>
 

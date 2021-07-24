@@ -32,6 +32,7 @@ include '../global/functions/functions.php';
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $serial_count +=1;
+                        
                 ?>
 
                         <tr>
@@ -40,10 +41,13 @@ include '../global/functions/functions.php';
                             <td><?php echo $row['SUB_EVENT_NAME']; ?></td>
                             <td><?php echo date('d F Y', strtotime($row['TIME'])); ?></td>
                             <td><?php echo numberOfJoiners($row['ID']); ?></td>
-                            <td><button class="btn btn-block btn-outline-primary" onclick="location.href='#'">View</button></td>
+                            <form action="eventJoinersDetails.php" method="get">
+                            <td><button class="btn btn-block btn-outline-primary" name = "buttoneventID"value=<?php echo $row['ID'] ?> onclick="location.href='eventJoinersDetails.php'">View</button></td>
+                            </form>
                         </tr>
                 <?php
                     }
+                    
                 }
                 ?>
             </tbody>
