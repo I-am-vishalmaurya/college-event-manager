@@ -22,7 +22,8 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow" style="list-style-type: none;">
             <a class="nav-link dropdown-toggle" id="userDetailDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "Hello&nbsp;" . $_SESSION['first_name'];//echo str_repeat('&nbsp;', 2);  echo $_SESSION['last_name'];?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "Hello&nbsp;" . $_SESSION['first_name']; //echo str_repeat('&nbsp;', 2);  echo $_SESSION['last_name'];
+                                                                            ?></span>
                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
             </a>
             <!-- Dropdown - User Information -->
@@ -103,48 +104,37 @@
                 <i class='bx bx-bookmark-alt nav__box_icons'></i>
                 <span class="nav__name">Host an event</span>
             </a>
-            <div class="nav__dropdown active">
-                <a href="#" class="nav__links">
-                    <i class='bx bx-user nav__box_icons'></i>
-                    <span class="nav__name">Manage events</span>
-                    <i class='bx bx-chevron-down nav__icon nav__dropdown_icon'></i>
-                </a>
-                <div class="nav__dropdown__collapse bg-white">
-                    <div class="nav__dropdown__content">
-                        <a href="eventadd.php" class="nav__dropdown__item">College events</a>
-                        <a href="#" class="nav__dropdown__item">Open events</a>
-                        <a href="#" class="nav__dropdown__item">All events</a>
-                        <a href="#" class="nav__dropdown__item">Others</a>
-
-                    </div>
-                </div>
-            </div>
-            <a href="logout.php" class="nav__links nav__logout">
-                <i class='bx bx-log-out nav__box_icons'></i>
-                <span class="nav__name">Log out</span>
+            <a href="eventadd.php" class="nav__links">
+                <i class='bx bx-bookmark-alt nav__box_icons'></i>
+                <span class="nav__name">Manage events
+                </span>
             </a>
         </div>
+        <a href="logout.php" class="nav__links nav__logout">
+            <i class='bx bx-log-out nav__box_icons'></i>
+            <span class="nav__name">Log out</span>
+        </a>
+    </div>
 
     </div>
 
 </nav>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.php">Logout</a>
-                </div>
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.php">Logout</a>
             </div>
         </div>
     </div>
+</div>
