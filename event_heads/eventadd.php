@@ -1,5 +1,5 @@
 <?php
-$itile = "Manage events - Eventers";
+$title = "Manage events - Eventers";
 $bodyColor = "bg-light";
 include 'includes/header.php';
 include 'includes/navbar.php';
@@ -17,10 +17,22 @@ include 'includes/navbar.php';
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="source/eventaddcode.php" method="post">
+                    <form method="post" action="">
                         <div class="form-group row border-0">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="text" class="form-control form-control-user" name="event_name" placeholder="Event Name" required>
+                                <select name="event_name" class="form-select" placeholder="Select event name" id="eventNameDD">
+                                    <?php
+                                    include_once 'db/dbconfig.php';
+                                    $email = $_SESSION['email'];
+                                    $sqlEventNameDD = "SELECT event_name FROM events_name WHERE HOSTED_BY = '$email'";
+                                    $result = mysqli_query($link, $sqlEventNameDD);
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                        <option value="<?php echo $row['event_name']; ?>"><?php echo $row['event_name']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-user" name="sub_event_name" placeholder="Sub-event Name" required>
@@ -55,7 +67,7 @@ include 'includes/navbar.php';
                                 <textarea class="form-control form-control-user" name="description" placeholder="Enter details about event" required rows="3"></textarea>
                             </div>
                         </div>
-                        
+
                         <button type="submit" id="post_event_btn" name="post-event-button" class="btn btn-primary btn-user btn-block w-100">
                             Post Event
                         </button>
@@ -130,6 +142,42 @@ include 'includes/navbar.php';
 
     </div>
 </div>
+<?php
+$event_name = $sub_event_name = $college_name = $place = $time = $head_name = $description = '';
+if (isset($_POST['post-event-button'])) {
+    $event_name = mysqli_real_escape_string($link, $_POST['event_name']);
+    $sub_event_name = mysqli_real_escape_string($link, $_POST['sub_event_name']);
+    $college_name = mysqli_real_escape_string($link, $_POST['college_name']);
+    $place = mysqli_real_escape_string($link, $_POST['place']);
+    $time = ($_POST['time']);
+    $head_name = mysqli_real_escape_string($link, $_POST['head_name']);
+    $description = mysqli_real_escape_string($link, $_POST['description']);
+    $email =  $_SESSION["email"];
+
+    if ($event_name == $sub_event_name) {
+        $_SESSION['status'] = 'Event and sub event name should be different.';
+    } else {
+
+        $sql = "INSERT INTO `event_details` (`EVENT_NAME`, `SUB_EVENT_NAME`,`unique_email`, `COLLEGE_NAME`, `PLACE`, `TIME`, `EVENT_HEAD_NAME`, `DESCRIPTION`) VALUES (?,?,?,?,?,?,?,?)";
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "ssssssss", $event_name, $sub_event_name, $email, $college_name, $place, $time, $head_name, $description);
+        }
+
+        if ($bp = mysqli_stmt_execute($stmt)) {
+
+            echo '<div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="btn-close" data-dismiss="alert"></button>
+                <strong>Well done!</strong> You added event successfully.
+                </div>';
+        } else {
+            $_SESSION['status'] = "Ops! Something went wrong.";
+        }
+        mysqli_stmt_close($stmt);
+    }
+    mysqli_close($link);
+}
+
+?>
 
 <?php
 include 'includes/footer.php';
