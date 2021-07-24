@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../db/dbconfig.php';
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $eventName = $_POST['newEventName'];
@@ -6,6 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $noOfDays = $_POST['newEventdays'];
     $desc = $_POST['newEventDescription'];
     $range = $_POST['newEventVisitorRange'];
+    $hosted_by = $_SESSION['email'];
     $query1 = "SELECT * FROM `events_name` WHERE EVENT_NAME = $eventName";
     $result1 = $link->query($query1);
     //Code for Uploading the thumbnail
@@ -42,10 +44,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     //End of Uploading the thumbnail
     if ($result1 == false) {
         
-        $query = "INSERT INTO `events_name`(`EVENT_NAME`,`LOCATION`, `NO_DAYS_EVENTS`,`NO_VISITORS`,`DESCRIPTION`,`THUMBNAIL`) VALUES ('$eventName', '$location','$noOfDays','$range','$desc','$newfileName')";
+        $query = "INSERT INTO `events_name`(`HOSTED_BY`,`EVENT_NAME`,`LOCATION`, `NO_DAYS_EVENTS`,`NO_VISITORS`,`DESCRIPTION`,`THUMBNAIL`) VALUES ('$hosted_by','$eventName', '$location','$noOfDays','$range','$desc','$newfileName')";
         $result = mysqli_query($link, $query);
         if ($result) {
             echo "Successfully added";
+            header("Location: ../eventadd.php");
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($link);
         }
