@@ -386,3 +386,10 @@ img {
 .bxs-red-heart{
   background-color: red !important;
 }
+
+/* Event Thumbanil Styles */
+.event__thumbnail{
+  width: 100%;
+  height: auto;
+  
+}
