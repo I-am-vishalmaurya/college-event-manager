@@ -28,10 +28,10 @@ $bodyColor = "bg-light";
 </head>
 
 <body class =<?php echo $bodyColor; ?>>
-<?php 
-require '../db/dbconfig.php';
-$event_name = $sub_event_name = $college_name = $place = $time = $head_name = $description = '';
+
+<?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $event_name = $sub_event_name = $college_name = $place = $time = $head_name = $description = '';
     $event_name = mysqli_real_escape_string($link, $_POST['event_name']);
     $sub_event_name = mysqli_real_escape_string($link, $_POST['sub_event_name']);
     $college_name = mysqli_real_escape_string($link, $_POST['college_name']);
@@ -40,30 +40,56 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $head_name = mysqli_real_escape_string($link, $_POST['head_name']);
     $description = mysqli_real_escape_string($link, $_POST['description']);
     $email =  $_SESSION["email"];
-    $id = $_SESSION['EVENT_ID'];
+    //Code for Uploading the subevent thumbnail
+    $file = $_FILES['subEventThumbnail'];
+    $filename = $_FILES['subEventThumbnail']['name'];
+    $tempname = $_FILES['subEventThumbnail']['tmp_name'];
+    $fileSize = $_FILES['subEventThumbnail']['size'];
+    $fileError = $_FILES['subEventThumbnail']['error'];
+    $filetype = $_FILES['subEventThumbnail']['type'];
+
+    $fileExtension = explode(".", $filename);
+    $fileActualExtension = strtolower(end($fileExtension));
+    $allowedFileTypes = array("jpg", "jpeg","png");
+    if(in_array($fileActualExtension, $allowedFileTypes)){
+        if($fileError === 0){
+            if($fileSize <= 5242880){
+                $newfileName = uniqid('', true).".".$fileActualExtension;
+                $fileDestination = '../uploads/subEventThumbnail/'.$newfileName;
+                (move_uploaded_file($tempname, $fileDestination));
+            }
+            else{
+                echo "File size is too big.";
+            }
+        }
+        else{
+            echo "Error: Uploading the file";
+        }
+    }
+    else{
+        echo "Invalid File Type";
+    }
+    //End of Uploading the thumbnail
+    
 
     if ($event_name == $sub_event_name) {
         $_SESSION['status'] = 'Event and sub event name should be different.';
     } else {
-        
-        $sql = "UPDATE `event_details` SET `EVENT_NAME` = ?, `SUB_EVENT_NAME` = ?, `unique_email` = ?, `COLLEGE_NAME` = ?, `PLACE` = ?, `TIME` = ?, `EVENT_HEAD_NAME` = ?, `DESCRIPTION` = ? WHERE ID =  $id";
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "ssssssss", $event_name, $sub_event_name, $email, $college_name, $place, $time, $head_name, $description);
-            
-        }
-       
-        if ($bp = mysqli_stmt_execute($stmt)) {
-            
-           
-            echo '<div class="alert alert-dismissible alert-success">
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                <strong>Well done!</strong> You updated event successfully <a href="../eventadd.php" class="alert-link">Redirect to previous page</a>.
-                </div>';
-            
 
-            
+        $sql = "INSERT INTO `event_details` (`EVENT_NAME`, `SUB_EVENT_NAME`,`unique_email`, `COLLEGE_NAME`, `PLACE`, `TIME`, `EVENT_HEAD_NAME`, `DESCRIPTION`, `THUMBNAIL`) VALUES (?,?,?,?,?,?,?,?,?)";
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, "sssssssss", $event_name, $sub_event_name, $email, $college_name, $place, $time, $head_name, $description, $newfileName);
+        }
+
+        if ($bp = mysqli_stmt_execute($stmt)) {
+
+            echo '<div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="btn-close" data-dismiss="alert"></button>
+                <strong>Well done!</strong> You added event successfully.
+                </div>';
+            header('Location: ../eventadd.php?event-added-successfully');
         } else {
-            $_SESSION['status'] = "Ops! Something went wrong.";
+            header('Location: ../eventadd.php?error-occured');
         }
         mysqli_stmt_close($stmt);
     }
