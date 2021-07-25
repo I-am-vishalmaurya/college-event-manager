@@ -17,7 +17,7 @@ include 'includes/navbar.php';
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group row border-0">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <select name="event_name" class="form-select" placeholder="Select event name" id="eventNameDD">
@@ -65,6 +65,12 @@ include 'includes/navbar.php';
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <textarea class="form-control form-control-user" name="description" placeholder="Enter details about event" required rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label for="formFile2" class="form-label">Thumbnail for sub-event</label>
+                                <input class="form-control" name="subEventThumbnail" type="file" id="formFile2">
                             </div>
                         </div>
 
@@ -143,8 +149,8 @@ include 'includes/navbar.php';
     </div>
 </div>
 <?php
-$event_name = $sub_event_name = $college_name = $place = $time = $head_name = $description = '';
-if (isset($_POST['post-event-button'])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $event_name = $sub_event_name = $college_name = $place = $time = $head_name = $description = '';
     $event_name = mysqli_real_escape_string($link, $_POST['event_name']);
     $sub_event_name = mysqli_real_escape_string($link, $_POST['sub_event_name']);
     $college_name = mysqli_real_escape_string($link, $_POST['college_name']);
@@ -153,14 +159,42 @@ if (isset($_POST['post-event-button'])) {
     $head_name = mysqli_real_escape_string($link, $_POST['head_name']);
     $description = mysqli_real_escape_string($link, $_POST['description']);
     $email =  $_SESSION["email"];
+    //Code for Uploading the subevent thumbnail
+    $file = $_FILES['subEventThumbnail'];
+    $filename = $_FILES['subEventThumbnail']['name'];
+    $tempname = $_FILES['subEventThumbnail']['tmp_name'];
+    $fileSize = $_FILES['subEventThumbnail']['size'];
+    $fileError = $_FILES['subEventThumbnail']['error'];
+    $filetype = $_FILES['subEventThumbnail']['type'];
+
+    $fileExtension = explode(".", $filename);
+    $fileActualExtension = strtolower(end($fileExtension));
+    $allowedFileTypes = array("jpg", "jpeg", "png");
+    if (in_array($fileActualExtension, $allowedFileTypes)) {
+        if ($fileError === 0) {
+            if ($fileSize <= 5242880) {
+                $newfileName = uniqid('', true) . "." . $fileActualExtension;
+                $fileDestination = 'uploads/subEventThumbnail/' . $newfileName;
+                (move_uploaded_file($tempname, $fileDestination));
+            } else {
+                echo "File size is too big.";
+            }
+        } else {
+            echo "Error: Uploading the file";
+        }
+    } else {
+        echo "Invalid File Type";
+    }
+    //End of Uploading the thumbnail
+
 
     if ($event_name == $sub_event_name) {
         $_SESSION['status'] = 'Event and sub event name should be different.';
     } else {
 
-        $sql = "INSERT INTO `event_details` (`EVENT_NAME`, `SUB_EVENT_NAME`,`unique_email`, `COLLEGE_NAME`, `PLACE`, `TIME`, `EVENT_HEAD_NAME`, `DESCRIPTION`) VALUES (?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO `event_details` (`EVENT_NAME`, `SUB_EVENT_NAME`,`unique_email`, `COLLEGE_NAME`, `PLACE`, `TIME`, `EVENT_HEAD_NAME`, `DESCRIPTION`, `THUMBNAIL`) VALUES (?,?,?,?,?,?,?,?,?)";
         if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "ssssssss", $event_name, $sub_event_name, $email, $college_name, $place, $time, $head_name, $description);
+            mysqli_stmt_bind_param($stmt, "sssssssss", $event_name, $sub_event_name, $email, $college_name, $place, $time, $head_name, $description, $newfileName);
         }
 
         if ($bp = mysqli_stmt_execute($stmt)) {
@@ -169,14 +203,14 @@ if (isset($_POST['post-event-button'])) {
                 <button type="button" class="btn-close" data-dismiss="alert"></button>
                 <strong>Well done!</strong> You added event successfully.
                 </div>';
+            
         } else {
-            $_SESSION['status'] = "Ops! Something went wrong.";
+          
         }
         mysqli_stmt_close($stmt);
     }
     mysqli_close($link);
 }
-
 ?>
 
 <?php
