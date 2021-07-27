@@ -40,7 +40,7 @@ include '../../global/functions/functions.php';
                                     Date: <?php echo date('d F Y', strtotime($row_data['TIME'])); ?>
                                 </div>
                             </div>
-                            <form action="joined_the_event.php" method="get">
+                            <form action="../source/joined_the_event.php" method="get">
                            
                             <input type="hidden" name="eventjoin" value=<?php echo $row_data["ID"];?>>
                             <button type="submit" class="btn btn-outline-primary btn-sm btn-block w-50">Join</button>

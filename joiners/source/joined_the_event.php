@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             echo '<div class="alert alert-dismissible alert-warning">
                      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                      <h4 class="alert-heading">Warning!</h4>
-                     <p class="mb-0">You have already joined this event.</p>
+                     <p class="mb-0">You have already joined this event.<a href="../joiner_index.php">Go back from here.</p>
                  </div>';
         } 
     }
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             if ($exe = mysqli_stmt_execute($stmt)) {
                 echo '<div class="alert alert-dismissible alert-success">
                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                 <strong>Well done!</strong> You joined the event successfully <a href="../index.php" class="alert-link">Redirect to previous page</a>.
+                 <strong>Well done!</strong> You joined the event successfully <a href="../joiner_index.php" class="alert-link">Redirect to previous page</a>.
                  </div>';
             }
         }

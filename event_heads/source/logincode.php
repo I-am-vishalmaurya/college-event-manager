@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["first_name"] = $first_name;
                             $_SESSION["last_name"] = $last_name;
                             $_SESSION["email"] = $email;
-                            echo $_SESSION['first_name'];
+                            
                             // Redirect user to welcome page
                             header("location: ../dashboard.php");
                         } else {

@@ -69,6 +69,20 @@ include 'includes/navbar.php';
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
+                                <select name="category" class="form-select" placeholder="Choose Category">
+                                    <option value="Choose category" selected disabled>Choose the category</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Sports">Outdoor activity</option>
+                                    <option value="Indoor sports">Indoor sports</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Entertainment">Quiz games</option>
+                                    <option value="Games">Games</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label for="formFile2" class="form-label">Thumbnail for sub-event</label>
                                 <input class="form-control" name="subEventThumbnail" type="file" id="formFile2">
                             </div>

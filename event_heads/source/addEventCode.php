@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $time = ($_POST['time']);
     $head_name = mysqli_real_escape_string($link, $_POST['head_name']);
     $description = mysqli_real_escape_string($link, $_POST['description']);
+    $category = $_POST['category'];
     $email =  $_SESSION["email"];
     //Code for Uploading the subevent thumbnail
     $file = $_FILES['subEventThumbnail'];
@@ -76,9 +77,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $_SESSION['status'] = 'Event and sub event name should be different.';
     } else {
 
-        $sql = "INSERT INTO `event_details` (`EVENT_NAME`, `SUB_EVENT_NAME`,`unique_email`, `COLLEGE_NAME`, `PLACE`, `TIME`, `EVENT_HEAD_NAME`, `DESCRIPTION`, `THUMBNAIL`) VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO `event_details` (`EVENT_NAME`, `SUB_EVENT_NAME`,`unique_email`,`category`, `COLLEGE_NAME`, `PLACE`, `TIME`, `EVENT_HEAD_NAME`, `DESCRIPTION`, `THUMBNAIL`) VALUES (?,?,?,?,?,?,?,?,?)";
         if ($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "sssssssss", $event_name, $sub_event_name, $email, $college_name, $place, $time, $head_name, $description, $newfileName);
+            mysqli_stmt_bind_param($stmt, "ssssssssss", $event_name, $sub_event_name, $email,$category, $college_name, $place, $time, $head_name, $description, $newfileName);
         }
 
         if ($bp = mysqli_stmt_execute($stmt)) {

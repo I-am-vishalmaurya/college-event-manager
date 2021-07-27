@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ?>
                 <div class="alert alert-dismissible alert-success">
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <strong>Well done!</strong> You successfully registered with us <a href="#" class="alert-link">Click here to redirect to login page</a>.
+                    <strong>Well done!</strong> You successfully registered with us <a href="../pages/joiners_login.php" class="alert-link">Click here to redirect to login page</a>.
                 </div>
                 <?php
 

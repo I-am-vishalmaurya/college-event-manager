@@ -12,6 +12,7 @@ include '../../global/functions/functions.php';
             <h3 class="h3 text-center text-primary">Your Joined Events</h3>
         </div>
         <?php
+        $imgDestination = "../../global/uploads/subEventThumbnail/";
         $email = $_SESSION['email'];
         $sql = "SELECT EVENT_ID FROM `joined_events` WHERE EMAIL = '$email'";
         $result = mysqli_query($link, $sql);
@@ -29,7 +30,7 @@ include '../../global/functions/functions.php';
                                     <h5 class="card-title"><?php echo $row_data_2['SUB_EVENT_NAME']; ?></h5>
                                     <h6 class="card-subtitle text-muted"><?php echo $row_data_2['EVENT_NAME']; ?></h6>
                                 </div>
-                                <img class="img card-img-top" width="200px" height="125px" src="" alt="">
+                                <img class="img card-img-top" width="200px" height="125px" src="<?php echo $imgDestination . $row_data_2['THUMBNAIL']; ?>" alt="">
                                 <div class="card-body">
 
                                     <p class="card-text">

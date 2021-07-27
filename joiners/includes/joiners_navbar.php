@@ -99,10 +99,7 @@
                 <i class='bx bx-compass nav__box_icons'></i>
                 <span class="nav__name">Explore</span>
             </a>
-            <a href="../pages/event-joiner.php" class="nav__links">
-                <i class='bx bx-calendar-event nav__box_icons'></i>
-                <span class="nav__name">Joined Events</span>
-            </a>
+            
             <a href="../pages/saved.php" class="nav__links">
                 <i class='bx bx-bookmark-alt nav__box_icons'></i>
                 <span class="nav__name">Saved</span>
