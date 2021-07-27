@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         if($fileError === 0){
             if($fileSize <= 5242880){
                 $newfileName = uniqid('', true).".".$fileActualExtension;
-                $fileDestination = '../uploads/eventThumbnail/'.$newfileName;
+                $fileDestination = '../../global/uploads/eventThumbnail/'.$newfileName;
                 (move_uploaded_file($tempname, $fileDestination));
                 
 

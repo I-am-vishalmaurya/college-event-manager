@@ -18,7 +18,7 @@ include 'includes/navbar.php';
             $result = mysqli_query($link, $sql);
             //find number of record returns
             $nums_rows = mysqli_num_rows($result);
-            $imgDestination = "uploads/subEventThumbnail/";
+            $imgDestination = "../global/uploads/subEventThumbnail/";
             if ($nums_rows > 0) {
                 while ($row_data = mysqli_fetch_assoc($result)) {
 

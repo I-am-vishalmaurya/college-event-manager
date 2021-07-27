@@ -1,14 +1,14 @@
 <?php
-session_start();
 $title = 'Latest events - Eventers';
-include '../../public_html/includes/ph_header.php';
-include '../includes/ph_navbar.php';
+include '../includes/joiners_header.php';
+include '../includes/joiners_navbar.php';
 include '../../global/functions/functions.php';
 ?>
 
 <div class="container mt-4">
     <div class="row">
         <?php
+        $imgDestination = "../../global/uploads/subEventThumbnail/";
         require "../db/dbconfig.php";
         $sql = "SELECT * FROM `event_details` ORDER BY ID DESC";
         $result = mysqli_query($link, $sql);
@@ -24,7 +24,7 @@ include '../../global/functions/functions.php';
                             <h5 class="card-title"><?php echo $row_data['SUB_EVENT_NAME']; ?></h5>
                             <h6 class="card-subtitle text-muted"><?php echo $row_data['EVENT_NAME']; ?></h6>
                         </div>
-                        <img class="img card-img-top" width="250px" height="200px" src="" alt="">
+                        <img class="img card-img-top" width="250px" height="200px" src="<?php echo $imgDestination . $row_data['THUMBNAIL']; ?>" alt="">
                         <div class="card-body">
 
                             <p class="card-text">
@@ -72,5 +72,5 @@ include '../../global/functions/functions.php';
 </div>
 
 <?php
-include '../includes/ph_footer.php';
+include '../includes/joiners_footer.php';
 ?>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow mb-4 p-2 static-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white p-2 static-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="../index.php">
             <lottie-player src="https://assets7.lottiefiles.com/temporary_files/PH5YkW.json" background="transparent" speed="1" style="width: 70px; height: 35px;" class="d-inline-block align-text-top mt-0" loop autoplay></lottie-player>
