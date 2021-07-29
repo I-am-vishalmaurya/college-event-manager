@@ -77,7 +77,7 @@
                 </a>
                 <div class="nav__dropdown__collapse bg-white">
                     <div class="nav__dropdown__content">
-                        <a href="view-profile.php" class="nav__dropdown__item">Account</a>
+                        <a href="viewProfile.php" class="nav__dropdown__item">Account</a>
                         <a href="#" class="nav__dropdown__item">Password</a>
 
                     </div>
@@ -99,6 +99,10 @@
             <a href="EH_index.php" class="nav__links">
                 <i class='bx bx-compass nav__box_icons'></i>
                 <span class="nav__name">Explore</span>
+            </a>
+            <a href="allEvents.php" class="nav__links">
+                <i class='bx bx-compass nav__box_icons'></i>
+                <span class="nav__name">All events</span>
             </a>
             <a href="host-event.php" class="nav__links">
                 <i class='bx bx-bookmark-alt nav__box_icons'></i>
