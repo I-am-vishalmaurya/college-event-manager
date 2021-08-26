@@ -1,12 +1,12 @@
 <?php
 $title = "Manage events - Eventers";
-$bodyColor = "bg-light";
+$bodyColor = "bg-white";
 include 'includes/header.php';
 include 'includes/navbar.php';
+
 ?>
 
 <div class="container-fluid  p-4">
-
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -22,7 +22,7 @@ include 'includes/navbar.php';
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <select name="event_name" class="form-select" placeholder="Select event name" id="eventNameDD">
                                     <?php
-                                    include_once 'db/dbconfig.php';
+                                    require '../db/dbconfig.php';
                                     $email = $_SESSION['email'];
                                     $sqlEventNameDD = "SELECT event_name FROM events_name WHERE HOSTED_BY = '$email'";
                                     $result = mysqli_query($link, $sqlEventNameDD);
@@ -99,65 +99,17 @@ include 'includes/navbar.php';
             </div>
         </div>
     </div>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Events</h1>
-    </div>
-    <!-- Total No of events card -->
-    <div class="row">
-        <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card border-left-info rounded shadow h-100 pt-2 pb-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-2">
-                                Total Events
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                4
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ---x--- Total No of events card----x---- -->
-        <!-- Total No of registred people in events -->
-        <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary-text text-uppercase mb-2">
-                                Total Registration
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                120
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- -----x----- Total No of registred people in events-----x---- -->
-
-    </div>
 
     <div class="row">
         <div class="text-start my-2">
             <h3 class="h3 text-gray-700 text-bold">Manage subevent</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestias cupiditate minus alias sed qui nemo! Maiores animi officia possimus enim? Dignissimos magnam molestias porro, facere dolorum dolorem doloribus mollitia.</p>
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
-
-            <button class="btn p-3 border-primary font-weight-bold h-100" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-plus'> Add event</i></button>
+            <button class="btn p-3 bg-white font-weight-bold h-100 add-event-button w-100" data-toggle="modal" data-target="#exampleModalCenter"><i class='bx bx-plus'> Add event</i></button>
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
-            <button class="btn p-3 border-primary font-weight-bold h-100"><i class='bx bx-plus'> Search event</i></button>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="showevent.php"><button class="btn p-3 border-primary font-weight-bold h-100"><i class='bx bx-plus'> Show event</i></button></a>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <button class="btn p-3 border-primary font-weight-bold h-100"><i class='bx bx-plus'> Show event</i></button>
+            <a href="showevent.php"><button class="btn p-3 bg-white font-weight-bold h-100 add-event-button w-100"><i class='bx bx-plus'> Show event</i></button></a>
         </div>
 
     </div>

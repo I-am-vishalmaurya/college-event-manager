@@ -1,7 +1,7 @@
 <?php
 $title = "Join an event - Eventers";
 include '../includes/joiners_header.php';
-include '../db/dbconfig.php';
+require '../../db/dbconfig.php';
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {

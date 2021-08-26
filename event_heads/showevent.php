@@ -11,7 +11,7 @@ include 'includes/navbar.php';
     <div class="row">
         <?php
 
-        require 'db/dbconfig.php';
+require '../db/dbconfig.php';
         if ($email = $_SESSION['email']) {
             $sql = "SELECT * FROM `event_details` WHERE unique_email = '$email' ORDER BY ID DESC";
 

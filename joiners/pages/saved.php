@@ -1,7 +1,7 @@
 <?php
 include '../includes/joiners_header.php';
 include '../includes/joiners_navbar.php';
-include '../db/dbconfig.php';
+require '../../db/dbconfig.php';
 include '../../global/functions/functions.php';
 ?>
 <?php

@@ -23,7 +23,7 @@ include 'includes/navbar.php';
             </thead>
             <tbody>
                 <?php
-                include 'db/dbconfig.php';
+                require '../db/dbconfig.php';
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     $eventID = $_GET['buttoneventID'];
                     $sql = "SELECT * FROM `joined_events` WHERE EVENT_ID = $eventID";

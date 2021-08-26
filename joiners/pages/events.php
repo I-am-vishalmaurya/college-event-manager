@@ -9,7 +9,7 @@ include '../../global/functions/functions.php';
     <div class="row">
         <?php
         $imgDestination = "../../global/uploads/subEventThumbnail/";
-        require "../db/dbconfig.php";
+        require '../../db/dbconfig.php';
         $sql = "SELECT * FROM `event_details` ORDER BY ID DESC";
         $result = mysqli_query($link, $sql);
         $nums_rows = mysqli_num_rows($result);

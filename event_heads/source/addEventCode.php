@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../db/dbconfig.php';
+require '../../db/dbconfig.php';
 $title = "Post an event - Eventers";
 $bodyColor = "bg-light";
 ?>

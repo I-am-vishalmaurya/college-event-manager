@@ -32,7 +32,7 @@
                             <h6>Brand List</h6>
                             <hr>
                             <?php
-                                require_once 'db/dbconfig.php';
+                                require '../../db/dbconfig.php';
 
                                 $brand_query = "SELECT * FROM `filter_tags`";
                                 $brand_query_run  = mysqli_query($link, $brand_query);

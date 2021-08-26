@@ -3,6 +3,21 @@ $title = "Login as Event Head - Eventers";
 $bodyColor = "bg-light";
 include 'includes/header.php';
 ?>
+
+<?php 
+    $currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
+    "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . 
+    $_SERVER['REQUEST_URI'];
+    $url = substr($currentURL, strrpos($currentURL, '?' )+1);
+    if($url == "passwordSuccessfullyreset"){
+        echo '<div class="alert alert-dismissible alert-success">
+        <button type="button" class="btn-close close" data-dismiss="alert"></button>
+        <strong>Well done!</strong> You successfully reset the password login with new password to.
+      </div>';
+    }
+
+?>
+
 <div class="container">
     <div class="row justify-content-center">
 
@@ -35,13 +50,7 @@ include 'includes/header.php';
                                     <button type="submit" class="my-2 btn btn-primary btn-user btn-block w-100">
                                         Login
                                     </button>
-                                    <hr>
-                                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                                        <i class='bx bxl-google'></i> Login with Google
-                                    </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                        <i class='bx bxl-facebook'></i> Login with Facebook
-                                    </a>
+                                    
                                 </form>
                                 <hr>
                                 <div class="row">
@@ -77,3 +86,4 @@ include 'includes/header.php';
 </body>
 
 </html>
+

@@ -24,7 +24,7 @@ include '../global/functions/functions.php';
             </thead>
             <tbody>
                 <?php
-                include 'db/dbconfig.php';
+                require '../db/dbconfig.php';
                 $email = $_SESSION['email'];
                 $sql = "SELECT * FROM `event_details` WHERE unique_email = '$email'";
                 $result = mysqli_query($link, $sql);

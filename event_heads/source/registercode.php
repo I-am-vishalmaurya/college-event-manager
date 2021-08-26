@@ -1,5 +1,5 @@
 <?php
-include '../db/dbconfig.php';
+require '../../db/dbconfig.php';
 include '../includes/header.php';
 
 

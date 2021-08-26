@@ -78,7 +78,7 @@
                 <div class="nav__dropdown__collapse bg-white">
                     <div class="nav__dropdown__content">
                         <a href="viewProfile.php" class="nav__dropdown__item">Account</a>
-                        <a href="#" class="nav__dropdown__item">Password</a>
+                        <a href="forgot-password.php" class="nav__dropdown__item">Password</a>
 
                     </div>
                 </div>
@@ -96,20 +96,20 @@
                 <h3 class="nav__subtitle">Events</h3>
 
             </div>
-            <a href="EH_index.php" class="nav__links">
+            <a href="index.php" class="nav__links">
                 <i class='bx bx-compass nav__box_icons'></i>
                 <span class="nav__name">Explore</span>
             </a>
             <a href="allEvents.php" class="nav__links">
-                <i class='bx bx-compass nav__box_icons'></i>
+                <i class='bx bx-purchase-tag-alt nav__box_icons'></i>
                 <span class="nav__name">All events</span>
             </a>
-            <a href="host-event.php" class="nav__links">
-                <i class='bx bx-bookmark-alt nav__box_icons'></i>
+            <a href="hostEvent.php" class="nav__links">
+                <i class='bx bx-plus-medical nav__box_icons'></i>
                 <span class="nav__name">Host an event</span>
             </a>
             <a href="eventadd.php" class="nav__links">
-                <i class='bx bx-bookmark-alt nav__box_icons'></i>
+                <i class='bx bx-edit-alt nav__box_icons'></i>
                 <span class="nav__name">Manage events
                 </span>
             </a>

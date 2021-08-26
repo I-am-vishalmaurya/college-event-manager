@@ -3,7 +3,7 @@ $title = 'Latest events - Eventers';
 include '../includes/joiners_header.php';
 include '../includes/joiners_navbar.php';
 include '../../global/functions/functions.php';
-require "../db/dbconfig.php";
+require '../../db/dbconfig.php';
 ?>
 
 <div class="container mt-4">

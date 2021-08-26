@@ -1,10 +1,13 @@
 <?php
 session_start();
 $title = 'Latest events - Eventers';
+$eventPageLocation = "events.php";
+$loginPageLocation = "../../joiners/pages/joiners_login.php";
+$adminLoginPageLocation = "../../event_heads/login.php";
 include '../includes/ph_header.php';
 include '../includes/ph_navbar.php';
 include '../../global/functions/functions.php';
-require_once '../db/dbconfig.php';
+require '../../db/dbconfig.php';
 
 ?>
 
@@ -36,10 +39,9 @@ require_once '../db/dbconfig.php';
                                     }
                             ?>
                                     <div>
-                                        <input type="checkbox" name="filters[]" value="<?= $filterlist['ID']; ?>" 
-                                        <?php if (in_array($filterlist['ID'], $checked)) {
-                                            echo "checked";
-                                        } ?> />
+                                        <input type="checkbox" name="filters[]" value="<?= $filterlist['ID']; ?>" <?php if (in_array($filterlist['ID'], $checked)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?> />
                                         <?php echo $filterlist['category_name']; ?>
                                     </div>
                             <?php
@@ -67,30 +69,30 @@ require_once '../db/dbconfig.php';
         ?>
                         <div class="col-3 col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                     
-                                <img class="img card-img-top" width="250px" height="200px" src="<?php 
-                                if($filter_data_2['THUMBNAIL']){
-                                    echo $filedestination . $filter_data_2['THUMBNAIL'];
-                                }
-                                else{
-                                    echo '../../assets/images/placeholder.jpg';
-                                }
-                                ?>" alt="">
+
+                                <img class="img card-img-top" width="250px" height="200px" src="<?php
+                                                                                                if ($filter_data_2['THUMBNAIL']) {
+                                                                                                    echo $filedestination . $filter_data_2['THUMBNAIL'];
+                                                                                                } else {
+                                                                                                    echo '../../assets/images/placeholder.jpg';
+                                                                                                }
+                                                                                                ?>" alt="">
 
                                 <div class="card-footer bg-white">
                                     <h3><?php echo $filter_data_2['SUB_EVENT_NAME'] ?></h3>
                                     <p><?= date('d F Y', strtotime($filter_data_2['TIME'])); ?></p>
-                                    <form action="joined_the_event.php" method="get">
+                                    <p><?php echo turnacteString($filter_data_2['DESCRIPTION'], 150, 1) ?></p>
+                                    <div class="row">
+                                    <div class="col-6"><button class="btn btn-primary w-100 btn-sm" onclick="location.href='../../joiners/pages/joiners_login.php'">Sign in to join</button></div>
+                                    <div class="col-4"><a href="" class="btn btn-outline-primary btn-sm w-100">
+                                        Read more
+                                    </a></div>
+                                    <div class="col-2"><a href="#" class="btn btn-outline-secondary btn-sm btn-100">
+                                        <i class='bx bx-heart'></i>
+                                    </a></div>
+                                    
+                                </div>
 
-                                        <input type="hidden" name="eventjoin" value=<?php echo $filter_data_2["ID"]; ?>>
-                                        <button type="submit" class="btn btn-outline-primary btn-sm btn-block w-50">Join</button>
-                                        <a href="joined-event.php" class="btn btn-outline-primary btn-sm btn-block w-30">
-                                            Read more
-                                        </a>
-                                        <a href="#" class="btn btn-outline-secondary btn-sm">
-                                            <i class='bx bx-heart'></i>
-                                        </a>
-                                    </form>
                                 </div>
 
                             </div>
@@ -108,29 +110,30 @@ require_once '../db/dbconfig.php';
                     ?>
                     <div class="col-3 col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 p-0">
-                        <img class="img card-img-top" width="250px" height="200px" src="<?php 
-                                if($sql_all_data['THUMBNAIL']){
-                                    echo $filedestination . $sql_all_data['THUMBNAIL'];
-                                }
-                                else{
-                                    echo '../../assets/images/placeholder.jpg';
-                                }
-                                ?>" alt="">
+                            <img class="img card-img-top" width="250px" height="200px" src="<?php
+                                                                                            if ($sql_all_data['THUMBNAIL']) {
+                                                                                                echo $filedestination . $sql_all_data['THUMBNAIL'];
+                                                                                            } else {
+                                                                                                echo '../../assets/images/placeholder.jpg';
+                                                                                            }
+                                                                                            ?>" alt="">
 
                             <div class="card-footer bg-white">
                                 <h3><?php echo $sql_all_data['SUB_EVENT_NAME'] ?></h3>
                                 <p><?= date('d F Y', strtotime($sql_all_data['TIME'])); ?></p>
-                                <form action="joined_the_event.php" method="get">
-
-                                    <input type="hidden" name="eventjoin" value=<?php echo $sql_all_data["ID"]; ?>>
-                                    <button type="submit" class="btn btn-outline-primary btn-sm btn-block w-50">Join</button>
-                                    <a href="joined-event.php" class="btn btn-outline-primary btn-sm btn-block w-30">
+                                <p><?php echo turnacteString($sql_all_data['DESCRIPTION'], 150, 1) ?></p>
+                                <div class="row">
+                                    <div class="col-6"><button class="btn btn-primary w-100 btn-sm">Sign in to join</button></div>
+                                    <div class="col-4"><a href="" class="btn btn-outline-primary btn-sm w-100">
                                         Read more
-                                    </a>
-                                    <a href="#" class="btn btn-outline-secondary btn-sm">
+                                    </a></div>
+                                    <div class="col-2"><a href="#" class="btn btn-outline-secondary btn-sm btn-100">
                                         <i class='bx bx-heart'></i>
-                                    </a>
-                                </form>
+                                    </a></div>
+                                    
+                                </div>
+
+
                             </div>
 
                         </div>

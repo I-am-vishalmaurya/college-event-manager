@@ -346,19 +346,15 @@ img {
     
 }
 .account__image {
-  width: 100px;
-  height: auto;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
-}
-
-.account__image {
   opacity: 1;
   display: block;
-  height: auto;
   transition: 0.5s ease;
   backface-visibility: hidden;
-  
 }
+
 
 .image__placeholder{
     transition: .5s ease;
@@ -392,4 +388,25 @@ img {
   width: 100%;
   height: auto;
   
+}
+
+/* Dashboard styling */
+.dashboard-card-title{
+  color: black;
+}
+
+.dashboard-add-event{
+  opacity: 0.6;
+}
+
+.dashboard-add-event:hover{
+  opacity: 1;
+}
+
+/* add event page styling  */
+
+
+.add-event-button:hover{
+  opacity: 1;
+  background-color: orangered !important;
 }

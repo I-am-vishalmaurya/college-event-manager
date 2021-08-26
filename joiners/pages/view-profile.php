@@ -6,7 +6,7 @@ include '../includes/joiners_navbar.php';
 <?php
 $imgDestination = "../../global/uploads/profileImage/";
 $email = $_SESSION['email'];
-include '../db/dbconfig.php';
+require '../../db/dbconfig.php';
 $sql = "SELECT * FROM `student_login` WHERE EMAIL = '$email'";
 $result = mysqli_query($link, $sql);
 $nums_rows = mysqli_num_rows($result);

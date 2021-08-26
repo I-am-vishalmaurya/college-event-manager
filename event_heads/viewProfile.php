@@ -7,7 +7,7 @@ include 'includes/navbar.php';
 <?php
 $imgDestination = "../global/uploads/profileImage/";
 $email = $_SESSION['email'];
-include '../db/dbconfig.php';
+require '../db/dbconfig.php';
 $sql = "SELECT * FROM `student_login` WHERE EMAIL = '$email'";
 $result = mysqli_query($link, $sql);
 $nums_rows = mysqli_num_rows($result);
@@ -19,7 +19,7 @@ if ($nums_rows > 0) {
 
                 <form action="../source/update-account-details.php" class="user" method="POST" enctype="multipart/form-data">
                     <div class="row mx-auto form-group">
-                        <div class="update__profile__pic mb-4">
+                        <div class="update__profile__pic my-4">
                             <img src="<?php
 
                                         if ($data['THUMBNAIL']) {
@@ -29,7 +29,7 @@ if ($nums_rows > 0) {
                                         }
 
 
-                                        ?>" alt="" class="account__image mx-auto" style="cursor: pointer;">
+                                        ?>" alt="" class="account__image mx-auto " style="cursor: pointer;">
                             <div class="image__placeholder">
                                 <label class="-label" for="file">
                                     <i class='bx bxs-camera'></i>

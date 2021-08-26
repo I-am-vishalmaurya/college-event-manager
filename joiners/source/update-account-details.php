@@ -1,6 +1,6 @@
 <?php 
 session_start();
-    include '../db/dbconfig.php';
+require '../../db/dbconfig.php';
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $email = $_SESSION['email'];
 

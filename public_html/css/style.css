@@ -89,3 +89,28 @@ h5.card-title {
   font-weight:bolder;
   font-size: 50px;
 }
+
+/* Featured events styling */
+.title-staff-picks{
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+}
+.title-staff-picks-black{
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+}
+.card--radius{
+  border-radius: 10px;
+}
+
+/* Event head banner */
+.event--head--banner{
+  min-height: 500px;
+}
+
+.btn-event-head-banner{
+  font-size: 28px;
+  border-radius: 20px;
+}
