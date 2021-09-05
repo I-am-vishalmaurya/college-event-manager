@@ -1,0 +1,23 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>70</x><y>100</y><w>210</w><h>190</h></coordinates><panel_attributes>Users
+--
+1. ID : Int
+2. First Name: Varchar(255)
+3. Last Name: Varchar(255)
+4. Email: Varchar(255)
+5. Password: Varchar(255)
+6. Date of Birth: Date
+7. College Name: Varchar (Null)
+8.  City: Varchar(50)
+9. State: Varchar(50)
+10. Zipcode:int
+11. Thumbnail: varchar(255)
+12. Joined On: Date and time</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>140</y><w>210</w><h>120</h></coordinates><panel_attributes>Join Event
+--
+Joined_Event_Id: Int (Primary Key)
+Email: Varchar(255)
+First Name: Varchar(255)
+Last Name: Varchar(255)
+Event_Id: Int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>180</y><w>310</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=0..n
+m2=0..1
+teaches to &gt;</panel_attributes><additional_attributes>10;20;290;20</additional_attributes></element></diagram>

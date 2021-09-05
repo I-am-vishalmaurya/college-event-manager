@@ -6,6 +6,22 @@ include 'includes/navbar.php';
 
 ?>
 
+<!-- Checking the url and getting the validation alerts -->
+<?php 
+    $currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
+    "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . 
+    $_SERVER['REQUEST_URI'];
+    $url = substr($currentURL, strrpos($currentURL, '?' ) + 1);
+    if($url == "eventAddedSuccessfully"){
+        echo '<div class="alert alert-dismissible alert-success">
+        <button type="button" class="btn-close close" data-dismiss="alert"></button>
+        <strong>Your Event is live now.</strong> Add sub event for your event here.
+      </div>';
+    }
+
+?>
+
+
 <div class="container-fluid  p-4">
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

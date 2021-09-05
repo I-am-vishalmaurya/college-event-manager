@@ -4,6 +4,48 @@ $bodyColor = "bg-light";
     include 'includes/header.php';
     include 'includes/navbar.php';
 ?>
+
+
+<!-- Checking the url and getting the validation alerts -->
+<?php 
+    $currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
+    "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . 
+    $_SERVER['REQUEST_URI'];
+    $url = substr($currentURL, strrpos($currentURL, '?' ) + 1);
+    if($url == "someThingWentWrong"){
+        echo '<div class="alert alert-dismissible alert-danger">
+        <button type="button" class="btn-close close" data-dismiss="alert"></button>
+        <strong>Something not right</strong> Please try again after some time or contact us.
+      </div>';
+    }
+    elseif($url == "eventNameAlreadyExist"){
+        echo '<div class="alert alert-dismissible alert-warning">
+        <button type="button" class="btn-close close" data-dismiss="alert"></button>
+         Event with this name already exist.
+      </div>';
+    }
+    elseif($url == "error=fileSizeIsBig"){
+      echo '<div class="alert alert-dismissible alert-warning">
+        <button type="button" class="btn-close close" data-dismiss="alert"></button>
+         File Size is too big try to compress and upload the photo.
+      </div>';
+    }
+    elseif($url == "error=errorUplodaingFile"){
+      echo '<div class="alert alert-dismissible alert-danger">
+      <button type="button" class="btn-close close" data-dismiss="alert"></button>
+      <strong>Error Uploading the photo</strong> Please try again after some time or contact us.
+    </div>';
+    }
+    elseif($url == "error=invalidFileType"){
+      echo '<div class="alert alert-dismissible alert-warning">
+      <button type="button" class="btn-close close" data-dismiss="alert"></button>
+       <strong>Invalid type of file is provided.</strong> Please use the .jpeg, .png, .jpg files only.
+    </div>';
+    }
+
+?>
+
+
 <div class="ml-4">
 
   <fieldset>
@@ -51,7 +93,7 @@ $bodyColor = "bg-light";
     </div>
     <div class="form-group">
       <label for="formFile" class="form-label mt-4">Thumbnail for event</label>
-      <input class="form-control" name="newEventThumbnail" type="file" id="formFile">
+      <input class="form-control" name="newEventThumbnail" type="file" id="formFile" required>
     </div>
     <fieldset class="form-group">
       <legend class="mt-4">Number of visitor you expect</legend>

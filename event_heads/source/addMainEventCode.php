@@ -8,9 +8,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $desc = $_POST['newEventDescription'];
     $range = $_POST['newEventVisitorRange'];
     $hosted_by = $_SESSION['email'];
-    $query1 = "SELECT * FROM `events_name` WHERE EVENT_NAME = $eventName";
-    $result1 = $link->query($query1);
-    //Code for Uploading the thumbnail
+
+    $query1 = "SELECT * FROM `events_name` WHERE EVENT_NAME = '$eventName'";
+    $result1 = mysqli_query($link, $query1);
+    if(mysqli_num_rows($result1) > 0) {
+        header("Location: ../host-event-confirm.php?eventNameAlreadyExist");
+    }
+     
+    else {
+         //Code for Uploading the thumbnail
     $files = $_FILES['newEventThumbnail'];
     $filename = $_FILES['newEventThumbnail']['name'];
     $tempname = $_FILES['newEventThumbnail']['tmp_name'];
@@ -31,32 +37,27 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
             }
             else{
-                echo "File size is too big.";
+                header("Location: ../host-event-confirm.php?error=fileSizeIsBig");
             }
         }
         else{
-            echo "Error: Uploading the file";
+            header("Location: ../host-event-confirm.php?error=errorUplodaingFile");
         }
     }
     else{
-        echo "Invalid File Type";
+        header("Location: ../host-event-confirm.php?error=invalidFileType");
     }
     //End of Uploading the thumbnail
-    if ($result1 == false) {
+
         
         $query = "INSERT INTO `events_name`(`HOSTED_BY`,`EVENT_NAME`,`LOCATION`, `NO_DAYS_EVENTS`,`NO_VISITORS`,`DESCRIPTION`,`THUMBNAIL`) VALUES ('$hosted_by','$eventName', '$location','$noOfDays','$range','$desc','$newfileName')";
         $result = mysqli_query($link, $query);
         if ($result) {
-            echo "Successfully added";
-            header("Location: ../eventadd.php");
+            header("Location: ../eventadd.php?eventAddedSuccessfully");
         } else {
-            echo "Error: " . $query . "<br>" . mysqli_error($link);
+            header("Location: ../host-event-confirm.php?someThingWentWrong");
         }
-    } 
-    
-    else {
-        echo "Event name already exists";
-    }
 
 }
+    }
 ?>

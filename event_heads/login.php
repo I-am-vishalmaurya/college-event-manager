@@ -8,11 +8,17 @@ include 'includes/header.php';
     $currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
     "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . 
     $_SERVER['REQUEST_URI'];
-    $url = substr($currentURL, strrpos($currentURL, '?' )+1);
+    $url = substr($currentURL, strrpos($currentURL, '?' ) + 1);
     if($url == "passwordSuccessfullyreset"){
         echo '<div class="alert alert-dismissible alert-success">
         <button type="button" class="btn-close close" data-dismiss="alert"></button>
         <strong>Well done!</strong> You successfully reset the password login with new password to.
+      </div>';
+    }
+    elseif($url == "invalidUserOrPassword"){
+        echo '<div class="alert alert-dismissible alert-danger">
+        <button type="button" class="btn-close close" data-dismiss="alert"></button>
+        <strong>Invalid Username or Password</strong> Please check the entered username and password.
       </div>';
     }
 

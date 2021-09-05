@@ -68,25 +68,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             header("location: ../dashboard.php");
                         } else {
                             // Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password."
+                            
+                            header("location: ../login.php?invalidUserOrPassword")
 ?>
-                            <div class="alert alert-dismissible alert-warning">
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                <h4 class="alert-heading">Warning!</h4>
-                                <p class="mb-0"><?php echo $login_err; ?></p>
-                            </div>
+
                     <?php
                         }
                     }
                 } else {
                     // Username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
+                    header("location: ../login.php?invalidUserOrPassword")
                     ?>
-                    <div class="alert alert-dismissible alert-warning">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                        <h4 class="alert-heading">Warning!</h4>
-                        <p class="mb-0"><?php echo $login_err; ?></p>
-                    </div>
+                    
 <?php
                 }
             } else {

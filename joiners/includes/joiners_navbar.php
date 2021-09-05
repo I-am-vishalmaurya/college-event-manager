@@ -75,9 +75,9 @@
                     <i class='bx bx-chevron-down nav__icon nav__dropdown_icon'></i>
                 </a>
                 <div class="nav__dropdown__collapse">
-                    <div class="nav__dropdown__content">
+                    <div class="nav__dropdown__content bg-whiite">
                         <a href="../pages/view-profile.php" class="nav__dropdown__item">Account</a>
-                        <a href="#" class="nav__dropdown__item">Password</a>
+                        <a href="../pages/forgot-password.php" class="nav__dropdown__item">Password</a>
 
                     </div>
                 </div>

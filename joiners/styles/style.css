@@ -206,7 +206,7 @@ img {
 }
 
 .nav__dropdown__collapse {
-  background-color: var(--first-color-light);
+  background-color: whitesmoke;
   border-radius: 0.25rem;
   margin-top: 1rem;
 }
@@ -387,4 +387,25 @@ img {
 
 .bxs-red-heart{
   background-color: red !important;
+}
+
+.error-page{
+  min-height: 100px;
+overflow: hidden;
+margin-top: 10% !important;
+}
+
+.error-page .number{
+  font-size: 52px;
+  color:red;
+}
+
+.error-page .text{
+  font-size: 18px;
+  color: rgb(255, 136, 0);
+}
+
+.card-thumbnail-image{
+  height: 400px;
+  width: 100%;
 }

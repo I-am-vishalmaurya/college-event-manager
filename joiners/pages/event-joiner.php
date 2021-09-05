@@ -46,9 +46,9 @@ include '../../global/functions/functions.php';
                                             Date: <?php echo date('d F Y', strtotime($row_data_2['TIME'])); ?>
                                         </div>
                                     </div>
-                                    <form action="../source/joined_the_event.php" method="get">
+                                    <form action="viewEvent.php" method="get">
 
-                                        <input type="hidden" name="eventjoin" value=<?php echo $row_data_2["ID"]; ?>>
+                                        <input type="hidden" name="joinedEventID" value=<?php echo $row_data_2["ID"]; ?>>
                                         <button type="submit" class="btn btn-outline-primary btn-sm btn-block w-50">View</button>
                                         <a href="joined-event.php" class="btn btn-outline-primary btn-sm btn-block w-30">
                                             Read more
