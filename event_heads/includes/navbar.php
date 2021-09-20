@@ -53,7 +53,7 @@
 <!-- Navbar -->
 <nav id="navbar" class="nav">
     <div class="nav__container">
-        <a href="EH_index.php" class="nav__links nav__logo">
+        <a href="index.php" class="nav__links nav__logo">
             <i class='bx bx-disc nav__box_icons'></i>
             <span class="nav__logo__name">Eventers</span>
         </a>

@@ -4,6 +4,7 @@ $bodyColor = "bg-light";
 include 'includes/header.php';
 ?>
 
+<!-- Checking the url and getting the validation alerts -->
 <?php 
     $currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
     "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . 

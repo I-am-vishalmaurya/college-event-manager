@@ -3,7 +3,7 @@ $title = "Edit Events - Eventers";
 $bodyColor = "bg-white";
 include 'includes/header.php';
 include 'includes/navbar.php';
-require '../../db/dbconfig.php';
+require '../db/dbconfig.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
