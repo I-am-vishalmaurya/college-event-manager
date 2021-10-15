@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-
     <link rel="stylesheet" href="../css/style.css">
 </head>
 

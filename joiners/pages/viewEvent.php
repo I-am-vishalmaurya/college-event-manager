@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_assoc($result);
         $event_name = $row['EVENT_NAME'];
-        $sql2 = "SELECT * FROM `events_name` WHERE `events_name`.`EVENT_NAME` = $event_name";
+        $sql2 = "SELECT * FROM `events_name` WHERE  = $event_name";
         $result2 = mysqli_query($link, $sql2);
         echo var_dump($result2);
         echo $event_name;
